@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOTP Authentication</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="auth-box">
+        <h2>TOTP Authentication</h2>
+        <div id="message"></div>
+        <form id="totp-form">
+          <div class="form-group">
+            <label for="totp">Enter TOTP Code:</label>
+            <input
+              type="text"
+              id="totp"
+              name="totp"
+              pattern="[0-9]{6}"
+              required
+              maxlength="6"
+            />
+          </div>
+          <button type="submit">Verify</button>
+        </form>
+        <div id="attempts">
+          Attempts remaining: <span id="attempts-count">3</span>
+        </div>
+      </div>
+    </div>
+    <script src="totp.js"></script>
+    <script src="auth.js"></script>
+  </body>
+</html>
